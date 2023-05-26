@@ -4,25 +4,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-//        heap maxHeap = new heap();
-//        int[] arr={10,20,30,15,30,40,50};
-//        maxHeap.BuildMaxHeap(arr);
-//        System.out.println("Array after being built:");
-//        for (int i = 0; i < arr.length; ++i) {
-//            System.out.print(" " + arr[i]);
-//
-//        }
-//        System.out.println();
-//        Sort_Array sort=new Sort_Array();
-////        sort.bubble_sort();
-////        sort.merge_sort();
-//        sort.radix_sort();
-//        System.out.println("radixx");
-//        for (int i = 0; i < sort.arr.length; ++i) {
-//            System.out.print(" " + sort.arr[i]);
-//        }
-
-        //////////////////////////////////////////6,17,10,15,10,7
         Scanner s = new Scanner(System.in);
         heap heap = new heap();
         PriorityQueue prioque = new PriorityQueue();
@@ -149,4 +130,5 @@ public class Main {
                 }
             }
         }
-}}
+}
+}
