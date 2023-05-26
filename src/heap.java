@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class heap {
 public void maxHeapify(int arr[],  int length, int index) {
     int left = 2*index+1;
@@ -14,7 +18,8 @@ public void maxHeapify(int arr[],  int length, int index) {
 }
     ///////////////////////////////////////////////////////////////////////////////
     public void BuildMaxHeap(int arr[]){
-        for (int i= (arr.length/2)-1;i>=0;i--){
+        for (int i= (arr.length/2)-1;i>=0;i--)
+        {
             maxHeapify(arr,arr.length,i);
         }
     }
@@ -30,6 +35,7 @@ public void maxHeapify(int arr[],  int length, int index) {
         }
     }
 ////////////////////////////////////////////////////////////////////////////////////////
+
     public void swap(int arr[],int i1, int i2) {
         arr[i1] = arr[i1] ^ arr[i2];
         arr[i2] = arr[i1] ^ arr[i2];

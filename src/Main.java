@@ -1,7 +1,9 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 //        heap maxHeap = new heap();
 //        int[] arr={10,20,30,15,30,40,50};
 //        maxHeap.BuildMaxHeap(arr);
@@ -26,7 +28,7 @@ public class Main {
         PriorityQueue prioque = new PriorityQueue();
         System.out.println("1-Build Max Heap");
         System.out.println("2-Max Heap Insert");
-        System.out.println("3-HeapExtract Max");
+        System.out.println("3-Heap Extract Max");
         System.out.println("4-Heap Sort");
         System.out.println("5-Bubble Sort");
         System.out.println("6-Merge Sort");
@@ -83,17 +85,22 @@ public class Main {
                 }
                 ////////////////////////////////////////////////////////
                 case 4: {
-                    System.out.println("Enter the array : ");
-                    String str = sc.nextLine();
-                    String[] ss = str.split(",");
-                    int[] arr = new int[ss.length];
-                    for (int i = 0; i < ss.length; i++) {
-                        arr[i] = Integer.valueOf(ss[i]);
+                    System.out.println("enter the file path:");
+                    String path = s.nextLine();
+                    File file = new File(path);
+                    Scanner myReader = new Scanner(file);
+                    String str = myReader.nextLine();
+                    String[] arrOfStr = str.split(",");
+                    int length=arrOfStr.length;
+                    int[] arr4 =new int[length];
+                    for (int i=0;i<length;i++) {
+                        arr4[i]=Integer.parseInt(arrOfStr[i]);
                     }
-                    heap.HeapSort(arr);
-                    System.out.println("Array after sorting:");
-                    for (int i = 0; i < arr.length; ++i) {
-                        System.out.print(" " + arr[i]);
+                    myReader.close();
+                    System.out.println("Array after heap sorting:");
+                    heap.HeapSort(arr4);
+                    for (int i = 0; i < arr4.length; ++i) {
+                        System.out.print(" " + arr4[i]);
                     }
                     break;
                 }

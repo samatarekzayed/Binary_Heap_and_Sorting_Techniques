@@ -1,7 +1,8 @@
 public class PriorityQueue {
     int l=0;
     int [] heap=new int[100000];
-    public void swap(int arr[],int i1, int i2) {
+    public void swap(int arr[],int i1, int i2)
+    {
         arr[i1] = arr[i1] ^ arr[i2];
         arr[i2] = arr[i1] ^ arr[i2];
         arr[i1] = arr[i1] ^ arr[i2];
