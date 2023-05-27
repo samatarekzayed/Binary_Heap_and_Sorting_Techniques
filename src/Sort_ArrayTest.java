@@ -1,7 +1,8 @@
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
