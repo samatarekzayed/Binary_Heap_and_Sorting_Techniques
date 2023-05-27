@@ -16,20 +16,21 @@ public class Main {
         System.out.println("6-Merge Sort");
         System.out.println("7-Radix Sort");
         System.out.println("8-EXIT");
-        //
+
         boolean sama=true;
         while(sama)
         {
+            int op=0;
             System.out.println();
             System.out.println("Enter the number of your choice:");
-        int op;
-        Scanner sc=new Scanner(System.in);
-        op = sc.nextInt();
-        sc.nextLine();
+            while(op==0)
+            op= s.nextInt();
+
+
             switch (op) {
                 case 1: {
                     System.out.println("Enter the array: ");
-                    String str = sc.nextLine();
+                    String str = s.nextLine();
                     String[] ss = str.split(",");
                     int[] arr = new int[ss.length];
                     for (int i = 0; i < ss.length; i++) {
@@ -46,7 +47,7 @@ public class Main {
                 ////////////////////////////////////////////////////////
                 case 2: {
                     System.out.println("Enter the numbers to be inserted:"); //benhom ,
-                    String str = sc.nextLine();
+                    String str = s.nextLine();
                     String[] strr = str.split(",");
                     for (int i = 0; i < strr.length; i++) {
                         prioque.max_heap_insert(Integer.valueOf(strr[i]));
@@ -64,12 +65,15 @@ public class Main {
                         System.out.println("Maximum: " + prioque.Heap_Extract_Max());
                     else
                         System.out.println("You have not inserted any element,heap is empty");
-                 break;
+                    break;
                 }
                 ////////////////////////////////////////////////////////
                 case 4: {
                     System.out.println("enter the file path:");
-                    String path = s.nextLine();
+                    String path="";
+                    while(path=="") {
+                        path = s.nextLine();
+                    }
                     File file = new File(path);
                     Scanner myReader = new Scanner(file);
                     String str = myReader.nextLine();
@@ -79,23 +83,30 @@ public class Main {
                     for (int i=0;i<length;i++) {
                         arr4[i]=Integer.parseInt(arrOfStr[i]);
                     }
+                    System.out.println("If you want to print intermediate arrays type true:");
+                    boolean flag = s.nextBoolean();
                     myReader.close();
                     System.out.println("Array after heap sorting:");
-                    heap.HeapSort(arr4);
+                    heap.HeapSort(arr4,flag);
                     for (int i = 0; i < arr4.length; ++i) {
-                        System.out.print(" " + arr4[i]);
+                        System.out.print(arr4[i]+" ");
                     }
                     break;
                 }
                 ////////////////////////////////////////////////////////
                 case 5: {
                     System.out.println("enter the file path:");
-                    String path = s.nextLine();
+                    String path="";
+                    while(path=="") {
+                        path = s.nextLine();
+                    }
+                    System.out.println("If you want to print intermediate arrays type true:");
+                    boolean flag = s.nextBoolean();
                     Sort_Array sort=new Sort_Array(path);
-                    System.out.println("Array after bubble sorting:");
-                    int[] arr=sort.bubble_sort();
+                    System.out.println("Array(s) after bubble sorting:");
+                    int[] arr=sort.bubble_sort(flag);
                     for (int i = 0; i < arr.length; ++i) {
-                        System.out.print(" " + arr[i]);
+                        System.out.print( arr[i] +" " );
                     }
                     break;
                 }
@@ -103,12 +114,17 @@ public class Main {
 
                 case 6: {
                     System.out.println("enter the file path:");
-                    String path = s.nextLine();
+                    String path="";
+                    while(path=="") {
+                        path = s.nextLine();
+                    }
+                    System.out.println("If you want to print intermediate arrays type true:");
+                    boolean flag = s.nextBoolean();
                     Sort_Array sort=new Sort_Array(path);
-                    System.out.println("Array after bubble sorting:");
-                    int[] arr=sort.merge_sort();
+                    System.out.println("Array after merge sorting:");
+                    int[] arr=sort.merge_sort(flag);
                     for (int i = 0; i < arr.length; ++i) {
-                        System.out.print(" " + arr[i]);
+                        System.out.print( arr[i]+" " );
                     }
                     break;
                 }
@@ -116,12 +132,17 @@ public class Main {
 
                 case 7: {
                     System.out.println("enter the file path:");
-                    String path = s.nextLine();
+                    String path="";
+                    while(path=="") {
+                        path = s.nextLine();
+                    }
+                    System.out.println("If you want to print intermediate arrays type true:");
+                    boolean flag = s.nextBoolean();
                     Sort_Array sort=new Sort_Array(path);
-                    System.out.println("Array after bubble sorting:");
-                    int[] arr=sort.radix_sort();
+                    System.out.println("Array after radix sorting:");
+                    int[] arr=sort.radix_sort(flag);
                     for (int i = 0; i < arr.length; ++i) {
-                        System.out.print(" " + arr[i]);
+                        System.out.print(arr[i]+" " );
                     }
                     break;
                 }
@@ -133,5 +154,5 @@ public class Main {
                 }
             }
         }
-}
+    }
 }

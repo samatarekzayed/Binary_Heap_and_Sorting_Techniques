@@ -17,7 +17,7 @@ class Sort_ArrayTest {
     void size_10() throws FileNotFoundException {
     Sort_Array bubble=new Sort_Array("src/10");
     long start = System.nanoTime();
-    int[] arr=bubble.bubble_sort();
+    int[] arr=bubble.bubble_sort(false);
     long end= System.nanoTime();
     assertArrayEquals(arr, new int[]{0, 1, 2, 10, 15, 20, 30, 30, 40, 50});
     System.out.println("\nexecution time for  bubble Sort: " + (end- start) + " nanosecond\n");
@@ -26,7 +26,7 @@ class Sort_ArrayTest {
 
     Sort_Array merge=new Sort_Array("src/10");
     long start2 = System.nanoTime();
-    int[] arr2=merge.merge_sort();
+    int[] arr2=merge.merge_sort(false);
     long end2= System.nanoTime();
     assertArrayEquals(arr2, new int[]{0, 1, 2, 10, 15, 20, 30, 30, 40, 50});
     System.out.println("\nexecution time for  merge Sort: " + (end2- start2) + " nanosecond\n");
@@ -35,7 +35,7 @@ class Sort_ArrayTest {
 
     Sort_Array radix=new Sort_Array("src/10");
     long start3 = System.nanoTime();
-    int[] arr3=radix.radix_sort();
+    int[] arr3=radix.radix_sort(false);
     long end3= System.nanoTime();
     assertArrayEquals(arr3, new int[]{0, 1, 2, 10, 15, 20, 30, 30, 40, 50});
     System.out.println("\nexecution time for radix Sort: " + (end3- start3) + " nanosecond\n");
@@ -54,7 +54,7 @@ class Sort_ArrayTest {
         }
         myReader.close();
         long start4= System.nanoTime();
-        heap.HeapSort(arr4);
+        heap.HeapSort(arr4,false);
         long end4= System.nanoTime();
         assertArrayEquals(arr4, new int[]{0, 1, 2, 10, 15, 20, 30, 30, 40, 50});
         System.out.println("\nexecution time for heap Sort: " + (end4- start4) + " nanosecond\n");
