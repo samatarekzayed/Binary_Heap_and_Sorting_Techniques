@@ -10,7 +10,7 @@ public class Sort_Array {
             File file = new File(path);
             Scanner myReader = new Scanner(file);
             String str = myReader.nextLine();
-            String[] arrOfStr = str.split(",");
+            String[] arrOfStr = str.split(" ");
             int length=arrOfStr.length;
             arr=new int[length];
             for (int i=0;i<length;i++) {
@@ -126,10 +126,10 @@ public class Sort_Array {
         return arr;
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////
-    void swap(int arr[],int i1, int i2) {
-        arr[i1] = arr[i1] ^ arr[i2];
-        arr[i2] = arr[i1] ^ arr[i2];
-        arr[i1] = arr[i1] ^ arr[i2];
+    public void swap(int arr[],int i1, int i2) {
+        int temp=arr[i1];
+        arr[i1]=arr[i2];
+        arr[i2]=temp;
     }
 
 }

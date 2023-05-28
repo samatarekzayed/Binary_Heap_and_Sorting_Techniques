@@ -2,6 +2,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static java.lang.Integer.parseInt;
+
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -12,10 +14,11 @@ public class Main {
         System.out.println("2-Max Heap Insert");
         System.out.println("3-Heap Extract Max");
         System.out.println("4-Heap Sort");
-        System.out.println("5-Bubble Sort");
-        System.out.println("6-Merge Sort");
-        System.out.println("7-Radix Sort");
-        System.out.println("8-EXIT");
+        System.out.println("5-Heap Sort using priority queue");
+        System.out.println("6-Bubble Sort");
+        System.out.println("7-Merge Sort");
+        System.out.println("8-Radix Sort");
+        System.out.println("9-EXIT");
 
         boolean sama=true;
         while(sama)
@@ -30,11 +33,13 @@ public class Main {
             switch (op) {
                 case 1: {
                     System.out.println("Enter the array: ");
-                    String str = s.nextLine();
+                    String str ="";
+                    while(str=="")
+                      str = s.nextLine();
                     String[] ss = str.split(",");
                     int[] arr = new int[ss.length];
                     for (int i = 0; i < ss.length; i++) {
-                        arr[i] = Integer.valueOf(ss[i]);
+                        arr[i] =parseInt(ss[i]);
                     }
                     heap.BuildMaxHeap(arr);
                     System.out.println("Array after building:");
@@ -77,15 +82,15 @@ public class Main {
                     File file = new File(path);
                     Scanner myReader = new Scanner(file);
                     String str = myReader.nextLine();
-                    String[] arrOfStr = str.split(",");
+                    String[] arrOfStr = str.split(" ");
                     int length=arrOfStr.length;
                     int[] arr4 =new int[length];
                     for (int i=0;i<length;i++) {
-                        arr4[i]=Integer.parseInt(arrOfStr[i]);
+                        arr4[i]= parseInt(arrOfStr[i]);
                     }
+                    myReader.close();
                     System.out.println("If you want to print intermediate arrays type true:");
                     boolean flag = s.nextBoolean();
-                    myReader.close();
                     System.out.println("Array after heap sorting:");
                     heap.HeapSort(arr4,flag);
                     for (int i = 0; i < arr4.length; ++i) {
@@ -95,6 +100,32 @@ public class Main {
                 }
                 ////////////////////////////////////////////////////////
                 case 5: {
+                    System.out.println("enter the file path:");
+                    String path="";
+                    while(path=="") {
+                        path = s.nextLine();
+                    }
+                    File file = new File(path);
+                    Scanner myReader = new Scanner(file);
+                    String str = myReader.nextLine();
+                    String[] arrOfStr = str.split(" ");
+                    int length=arrOfStr.length;
+                    int[] arr4 =new int[length];
+                    for (int i=0;i<length;i++) {
+                        arr4[i]= parseInt(arrOfStr[i]);
+                    }
+                    myReader.close();
+                    System.out.println("If you want to print intermediate arrays type true:");
+                    boolean flag = s.nextBoolean();
+                    System.out.println("Array after heap sorting using priority queue:");
+                    heap.HeapSortPQ(arr4,flag);
+                    for (int i = 0; i < arr4.length; ++i) {
+                        System.out.print(arr4[i]+" ");
+                    }
+                    break;
+                }
+                    //////////////////////////////////////////////////////////
+                case 6: {
                     System.out.println("enter the file path:");
                     String path="";
                     while(path=="") {
@@ -112,7 +143,7 @@ public class Main {
                 }
                 ////////////////////////////////////////////////////////
 
-                case 6: {
+                case 7: {
                     System.out.println("enter the file path:");
                     String path="";
                     while(path=="") {
@@ -130,7 +161,7 @@ public class Main {
                 }
                 ////////////////////////////////////////////////////////
 
-                case 7: {
+                case 8: {
                     System.out.println("enter the file path:");
                     String path="";
                     while(path=="") {
@@ -147,7 +178,7 @@ public class Main {
                     break;
                 }
                 ////////////////////////////////////////////////////////
-                case 8: {
+                case 9: {
                     sama = false;
                     /// 💔💔💔💔💔💔💔💔💔💔💔///
                     break;
