@@ -1,7 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
+import java.util.ArrayList;
 import static java.lang.Integer.parseInt;
 
 public class Main {
@@ -37,14 +37,14 @@ public class Main {
                     while(str=="")
                       str = s.nextLine();
                     String[] ss = str.split(",");
-                    int[] arr = new int[ss.length];
+                    ArrayList<Integer> arr  = new ArrayList<>(ss.length);
                     for (int i = 0; i < ss.length; i++) {
-                        arr[i] =parseInt(ss[i]);
+                        arr.add(parseInt(ss[i]));
                     }
                     heap.BuildMaxHeap(arr);
                     System.out.println("Array after building:");
-                    for (int i = 0; i < arr.length; ++i) {
-                        System.out.print(" " + arr[i]);
+                    for (int i = 0; i < arr.size(); ++i) {
+                        System.out.print(" " + arr.get(i));
                     }
                     break;
                 }
@@ -52,14 +52,16 @@ public class Main {
                 ////////////////////////////////////////////////////////
                 case 2: {
                     System.out.println("Enter the numbers to be inserted:"); //benhom ,
-                    String str = s.nextLine();
+                    String str ="";
+                    while(str=="")
+                        str = s.nextLine();
                     String[] strr = str.split(",");
                     for (int i = 0; i < strr.length; i++) {
                         prioque.max_heap_insert(Integer.valueOf(strr[i]));
                     }
                     System.out.println("After insertion:");
                     for (int i = 0; i < prioque.l; ++i) { // l is the length in priority queue class
-                        System.out.print(prioque.heap[i]);
+                        System.out.print(prioque.heap.get(i));
                         System.out.print(" ");
                     }
                     break;
@@ -82,19 +84,19 @@ public class Main {
                     File file = new File(path);
                     Scanner myReader = new Scanner(file);
                     String str = myReader.nextLine();
-                    String[] arrOfStr = str.split(" ");
+                    String[] arrOfStr = str.split(",");
                     int length=arrOfStr.length;
-                    int[] arr4 =new int[length];
+                    ArrayList<Integer> arr4 =new ArrayList<Integer>(length);
                     for (int i=0;i<length;i++) {
-                        arr4[i]= parseInt(arrOfStr[i]);
+                        arr4.add(parseInt(arrOfStr[i]));
                     }
                     myReader.close();
                     System.out.println("If you want to print intermediate arrays type true:");
                     boolean flag = s.nextBoolean();
                     System.out.println("Array after heap sorting:");
                     heap.HeapSort(arr4,flag);
-                    for (int i = 0; i < arr4.length; ++i) {
-                        System.out.print(arr4[i]+" ");
+                    for (int i = 0; i < arr4.size(); ++i) {
+                        System.out.print(arr4.get(i)+" ");
                     }
                     break;
                 }
@@ -108,19 +110,19 @@ public class Main {
                     File file = new File(path);
                     Scanner myReader = new Scanner(file);
                     String str = myReader.nextLine();
-                    String[] arrOfStr = str.split(" ");
+                    String[] arrOfStr = str.split(",");
                     int length=arrOfStr.length;
-                    int[] arr4 =new int[length];
+                    ArrayList<Integer> arr4 =new ArrayList<Integer>(length);
                     for (int i=0;i<length;i++) {
-                        arr4[i]= parseInt(arrOfStr[i]);
+                        arr4.add(parseInt(arrOfStr[i]));
                     }
                     myReader.close();
                     System.out.println("If you want to print intermediate arrays type true:");
                     boolean flag = s.nextBoolean();
                     System.out.println("Array after heap sorting using priority queue:");
                     heap.HeapSortPQ(arr4,flag);
-                    for (int i = 0; i < arr4.length; ++i) {
-                        System.out.print(arr4[i]+" ");
+                    for (int i = 0; i < arr4.size(); ++i) {
+                        System.out.print(arr4.get(i)+" ");
                     }
                     break;
                 }

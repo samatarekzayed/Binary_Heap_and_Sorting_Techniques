@@ -10,7 +10,7 @@ public class Sort_Array {
             File file = new File(path);
             Scanner myReader = new Scanner(file);
             String str = myReader.nextLine();
-            String[] arrOfStr = str.split(" ");
+            String[] arrOfStr = str.split(",");
             int length=arrOfStr.length;
             arr=new int[length];
             for (int i=0;i<length;i++) {
