@@ -1,26 +1,35 @@
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
+
+import static java.lang.Math.abs;
+
 public class Sort_Array {
 
     int[] arr;
     //////////////////////////constructor
     Sort_Array(String path) throws FileNotFoundException {
+        arr=readFromFile(path);
+    }
+    int[] readFromFile(String path) throws FileNotFoundException {
         try {
             File file = new File(path);
             Scanner myReader = new Scanner(file);
             String str = myReader.nextLine();
             String[] arrOfStr = str.split(",");
             int length=arrOfStr.length;
-            arr=new int[length];
+            int[] arr=new int[length];
             for (int i=0;i<length;i++) {
                 arr[i]=Integer.parseInt(arrOfStr[i]);
             }
             myReader.close();
+            return arr;
 
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
+            return null;
         }
 
     }
@@ -86,22 +95,19 @@ public class Sort_Array {
     ////////////////////////////////non comparison sort o(n) radix sort/////////////////////////////
     void countingSort(int array[], int size, int place) {
         int[] output = new int[size + 1];
-        int max = array[0];
-        for (int i = 1; i < size; i++) {
-            if (array[i] > max)
-                max = array[i];
-        }
-        int[] count = new int[max + 1];
-        for (int i = 0; i < max; ++i)
-            count[i] = 0;
+        int count[] = new int[10];
+        Arrays.fill(count, 0);
+
         for (int i = 0; i < size; i++)
             count[(array[i] / place) % 10]++; //tzwd 1 3la digit 8 msln law mwgod
         for (int i = 1; i < 10; i++)
             count[i] += count[i - 1];
+
         for (int i = size - 1; i >= 0; i--) {
-            output[count[(array[i] / place) % 10] - 1] = array[i];
+            output[count[(array[i]/ place) % 10] - 1] = array[i];
             count[(array[i] / place) % 10]--;
         }
+
         for (int i = 0; i < size; i++)
             array[i] = output[i];
     }
@@ -113,16 +119,39 @@ public class Sort_Array {
                 max = array[i];
         return max;
     }
-
+    int getMin(int array[], int n) {
+        int min = array[0];
+        for (int i = 1; i < n; i++)
+            if (array[i] < min)
+                min = array[i];
+        return min;
+    }
     int[] radix_sort(boolean flag)
     {
         int size=arr.length;
+        int min=getMin(arr,size);
+        if(min<0) {
+            for (int i = 0; i < size; i++) {
+                arr[i]+=(-1*min);
+            }
+        }
+        radix_sortutil(flag);
+        for (int i = 0; i < size; i++)
+            arr[i] = arr[i]+min;
+
+        return arr;
+    }
+
+    int[] radix_sortutil(boolean flag)
+    {
+        int size=arr.length;
         int max = getMax(arr, size);
-        for (int place = 1; max / place > 0; place *= 10) {
+        for (int place = 1; abs(max / place) > 0; place *= 10) {
             countingSort(arr, size, place);
             if(flag==true)
                 printArray(arr);
         }
+        // countingSort(arr,size,-1);
         return arr;
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////
