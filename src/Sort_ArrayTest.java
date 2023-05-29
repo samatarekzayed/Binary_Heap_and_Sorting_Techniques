@@ -56,6 +56,10 @@ class Sort_ArrayTest {
         for (int i=0;i<length;i++) {
             arr4[i]=Integer.parseInt(arrOfStr[i]);
         }
+        int[] arr5 =new int[length];
+        for (int i=0;i<length;i++) {
+            arr5[i]=Integer.parseInt(arrOfStr[i]);
+        }
         myReader.close();
         long start4= System.nanoTime();
         heap.HeapSort(arr4,false);
@@ -63,6 +67,13 @@ class Sort_ArrayTest {
         assertArrayEquals(arr4, sorted);
         System.out.println("\nexecution time for heap Sort: " + (end4- start4) + " nanosecond\n");
         System.out.println("after heap sort : " + Arrays.toString(arr4));
+        System.out.println("------------------------------------------------------------------");
+        long start5= System.nanoTime();
+        heap.HeapSortPQ(arr5,false);
+        long end5= System.nanoTime();
+        assertArrayEquals(arr5, sorted);
+        System.out.println("\nexecution time for heap Sort using priority queue: " + (end5- start5) + " nanosecond\n");
+        System.out.println("after heap sort using priority queue : " + Arrays.toString(arr5));
         System.out.println("------------------------------------------------------------------");
     }
     /////////////////////////////////////////radix tests///////////////////////////////////////////////////////////////////
@@ -172,6 +183,10 @@ class Sort_ArrayTest {
         for (int i=0;i<length;i++) {
             arr4[i]=Integer.parseInt(arrOfStr[i]);
         }
+        int[] arr5 =new int[length];
+        for (int i=0;i<length;i++) {
+            arr5[i]=Integer.parseInt(arrOfStr[i]);
+        }
         myReader.close();
         long start4= System.nanoTime();
         heap.HeapSort(arr4,false);
@@ -179,6 +194,13 @@ class Sort_ArrayTest {
         assertArrayEquals(arr4, sorted);
         System.out.println("\nexecution time for heap Sort: " + (end4- start4) + " nanosecond\n");
         System.out.println("after heap sort : " + Arrays.toString(arr4));
+        System.out.println("------------------------------------------------------------------");
+        long start5= System.nanoTime();
+        heap.HeapSort(arr5,false);
+        long end5= System.nanoTime();
+        assertArrayEquals(arr5, sorted);
+        System.out.println("\nexecution time for heap Sort using priority queue: " + (end5- start5) + " nanosecond\n");
+        System.out.println("after heap sort using priority queue : " + Arrays.toString(arr5));
         System.out.println("------------------------------------------------------------------");
     }
     @Test
@@ -223,6 +245,10 @@ class Sort_ArrayTest {
         for (int i=0;i<length;i++) {
             arr4[i]=Integer.parseInt(arrOfStr[i]);
         }
+        int[] arr5 =new int[length];
+        for (int i=0;i<length;i++) {
+            arr5[i]=Integer.parseInt(arrOfStr[i]);
+        }
         myReader.close();
         long start4= System.nanoTime();
         heap.HeapSort(arr4,false);
@@ -230,6 +256,13 @@ class Sort_ArrayTest {
         assertArrayEquals(arr4, sorted);
         System.out.println("\nexecution time for heap Sort: " + (end4- start4) + " nanosecond\n");
         System.out.println("after heap sort : " + Arrays.toString(arr4));
+        System.out.println("------------------------------------------------------------------");
+        long start5= System.nanoTime();
+        heap.HeapSort(arr5,false);
+        long end5= System.nanoTime();
+        assertArrayEquals(arr5, sorted);
+        System.out.println("\nexecution time for heap Sort using priority queue: " + (end5- start5) + " nanosecond\n");
+        System.out.println("after heap sort using priority queue : " + Arrays.toString(arr5));
         System.out.println("------------------------------------------------------------------");
     }
     @Test
@@ -274,6 +307,10 @@ class Sort_ArrayTest {
         for (int i=0;i<length;i++) {
             arr4[i]=Integer.parseInt(arrOfStr[i]);
         }
+        int[] arr5 =new int[length];
+        for (int i=0;i<length;i++) {
+            arr5[i]=Integer.parseInt(arrOfStr[i]);
+        }
         myReader.close();
         long start4= System.nanoTime();
         heap.HeapSort(arr4,false);
@@ -281,6 +318,13 @@ class Sort_ArrayTest {
         assertArrayEquals(arr4, sorted);
         System.out.println("\nexecution time for heap Sort: " + (end4- start4) + " nanosecond\n");
         System.out.println("after heap sort : " + Arrays.toString(arr4));
+        System.out.println("------------------------------------------------------------------");
+        long start5= System.nanoTime();
+        heap.HeapSort(arr5,false);
+        long end5= System.nanoTime();
+        assertArrayEquals(arr5, sorted);
+        System.out.println("\nexecution time for heap Sort using priority queue: " + (end5- start5) + " nanosecond\n");
+        System.out.println("after heap sort using priority queue : " + Arrays.toString(arr5));
         System.out.println("------------------------------------------------------------------");
     }
     @Test
@@ -325,6 +369,10 @@ class Sort_ArrayTest {
         for (int i=0;i<length;i++) {
             arr4[i]=Integer.parseInt(arrOfStr[i]);
         }
+        int[] arr5 =new int[length];
+        for (int i=0;i<length;i++) {
+            arr5[i]=Integer.parseInt(arrOfStr[i]);
+        }
         myReader.close();
         long start4= System.nanoTime();
         heap.HeapSort(arr4,false);
@@ -332,6 +380,13 @@ class Sort_ArrayTest {
         assertArrayEquals(arr4, sorted);
         System.out.println("\nexecution time for heap Sort: " + (end4- start4) + " nanosecond\n");
         System.out.println("after heap sort : " + Arrays.toString(arr4));
+        System.out.println("------------------------------------------------------------------");
+        long start5= System.nanoTime();
+        heap.HeapSort(arr5,false);
+        long end5= System.nanoTime();
+        assertArrayEquals(arr5, sorted);
+        System.out.println("\nexecution time for heap Sort using priority queue: " + (end5- start5) + " nanosecond\n");
+        System.out.println("after heap sort using priority queue : " + Arrays.toString(arr5));
         System.out.println("------------------------------------------------------------------");
     }
     @Test
@@ -376,6 +431,10 @@ class Sort_ArrayTest {
         for (int i=0;i<length;i++) {
             arr4[i]=Integer.parseInt(arrOfStr[i]);
         }
+        int[] arr5 =new int[length];
+        for (int i=0;i<length;i++) {
+            arr5[i]=Integer.parseInt(arrOfStr[i]);
+        }
         myReader.close();
         long start4= System.nanoTime();
         heap.HeapSort(arr4,false);
@@ -383,6 +442,13 @@ class Sort_ArrayTest {
         assertArrayEquals(arr4, sorted);
         System.out.println("\nexecution time for heap Sort: " + (end4- start4) + " nanosecond\n");
         System.out.println("after heap sort : " + Arrays.toString(arr4));
+        System.out.println("------------------------------------------------------------------");
+        long start5= System.nanoTime();
+        heap.HeapSort(arr5,false);
+        long end5= System.nanoTime();
+        assertArrayEquals(arr5, sorted);
+        System.out.println("\nexecution time for heap Sort using priority queue: " + (end5- start5) + " nanosecond\n");
+        System.out.println("after heap sort using priority queue : " + Arrays.toString(arr5));
         System.out.println("------------------------------------------------------------------");
     }
     @Test
@@ -427,6 +493,10 @@ class Sort_ArrayTest {
         for (int i=0;i<length;i++) {
             arr4[i]=Integer.parseInt(arrOfStr[i]);
         }
+        int[] arr5 =new int[length];
+        for (int i=0;i<length;i++) {
+            arr5[i]=Integer.parseInt(arrOfStr[i]);
+        }
         myReader.close();
         long start4= System.nanoTime();
         heap.HeapSort(arr4,false);
@@ -434,6 +504,13 @@ class Sort_ArrayTest {
         assertArrayEquals(arr4, sorted);
         System.out.println("\nexecution time for heap Sort: " + (end4- start4) + " nanosecond\n");
         //System.out.println("after heap sort : " + Arrays.toString(arr4));
+        System.out.println("------------------------------------------------------------------");
+        long start5= System.nanoTime();
+        heap.HeapSort(arr5,false);
+        long end5= System.nanoTime();
+        assertArrayEquals(arr5, sorted);
+        System.out.println("\nexecution time for heap Sort using priority queue: " + (end5- start5) + " nanosecond\n");
+        System.out.println("after heap sort using priority queue : " + Arrays.toString(arr5));
         System.out.println("------------------------------------------------------------------");
     }
     @Test
@@ -478,6 +555,10 @@ class Sort_ArrayTest {
         for (int i=0;i<length;i++) {
             arr4[i]=Integer.parseInt(arrOfStr[i]);
         }
+        int[] arr5 =new int[length];
+        for (int i=0;i<length;i++) {
+            arr5[i]=Integer.parseInt(arrOfStr[i]);
+        }
         myReader.close();
         long start4= System.nanoTime();
         heap.HeapSort(arr4,false);
@@ -485,6 +566,13 @@ class Sort_ArrayTest {
         assertArrayEquals(arr4, sorted);
         System.out.println("\nexecution time for heap Sort: " + (end4- start4) + " nanosecond\n");
         System.out.println("after heap sort : " + Arrays.toString(arr4));
+        System.out.println("------------------------------------------------------------------");
+        long start5= System.nanoTime();
+        heap.HeapSort(arr5,false);
+        long end5= System.nanoTime();
+        assertArrayEquals(arr5, sorted);
+        System.out.println("\nexecution time for heap Sort using priority queue: " + (end5- start5) + " nanosecond\n");
+        System.out.println("after heap sort using priority queue : " + Arrays.toString(arr5));
         System.out.println("------------------------------------------------------------------");
     }
 
