@@ -107,7 +107,6 @@ public class Sort_Array {
             output[count[(array[i]/ place) % 10] - 1] = array[i];
             count[(array[i] / place) % 10]--;
         }
-
         for (int i = 0; i < size; i++)
             array[i] = output[i];
     }
@@ -136,8 +135,10 @@ public class Sort_Array {
             }
         }
         radix_sortutil(flag);
-        for (int i = 0; i < size; i++)
-            arr[i] = arr[i]+min;
+        if(min<0) {
+            for (int i = 0; i < size; i++)
+                arr[i] = arr[i] + min;
+        }
 
         return arr;
     }

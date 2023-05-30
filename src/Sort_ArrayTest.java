@@ -125,7 +125,7 @@ class Sort_ArrayTest {
         long end1= System.nanoTime();
         assertArrayEquals(arr1,sorted1);
         System.out.println("\nexecution time for radix Sort: " + (end1- start1) + " nanosecond\n");
-        System.out.println("after bubble sort : " + Arrays.toString(arr1));
+        System.out.println("after radix sort : " + Arrays.toString(arr1));
         System.out.println("------------------------------------------------------------------");
 
         int[] sorted2={5,3,4,9,7,1,6,8,25487};
@@ -136,7 +136,7 @@ class Sort_ArrayTest {
         long end2= System.nanoTime();
         assertArrayEquals(arr2,sorted2);
         System.out.println("\nexecution time for radix Sort: " + (end2- start2) + " nanosecond\n");
-        System.out.println("after bubble sort : " + Arrays.toString(arr2));
+        System.out.println("after radix sort : " + Arrays.toString(arr2));
         System.out.println("------------------------------------------------------------------");
     }
     ///////////////////////////////////////end radix /////////////////////////////////////////////////////
